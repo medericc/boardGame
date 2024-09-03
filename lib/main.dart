@@ -169,6 +169,13 @@ class _JustOneCategoryScreenState extends State<JustOneCategoryScreen> {
     });
   }
 
+  void stopGame() {
+    setState(() {
+      gameStarted = false;
+      message = "Partie arrêtée. Cliquez sur 'Lancer' pour recommencer.";
+    });
+  }
+
   void nextTurn(String result) {
     setState(() {
       if (result == 'success') {
@@ -211,48 +218,62 @@ class _JustOneCategoryScreenState extends State<JustOneCategoryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: gameStarted
-          ? Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Mot à deviner : $currentMot'),
-                SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () => nextTurn('success'),
-                      child: Text('Réussi'),
-                    ),
-                    SizedBox(width: 10),
-                    ElevatedButton(
-                      onPressed: () => nextTurn('pass'),
-                      child: Text('Passer'),
-                    ),
-                    SizedBox(width: 10),
-                    ElevatedButton(
-                      onPressed: () => nextTurn('fail'),
-                      child: Text('Échouer'),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 20),
-                Text('Cartes restantes : $cartesRestantes'),
-                Text('Points : $points'),
-              ],
-            )
-          : Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Bienvenue à ${widget.categoryName} !'),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: startGame,
-                  child: Text('Lancer'),
-                ),
-              ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.categoryName),
+        actions: [
+          if (gameStarted)
+            IconButton(
+              icon: Icon(Icons.stop),
+              onPressed: stopGame,
             ),
+        ],
+      ),
+      body: Center(
+        child: gameStarted
+            ? Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Mot à deviner : $currentMot'),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () => nextTurn('success'),
+                        child: Text('Réussi'),
+                      ),
+                      SizedBox(width: 10),
+                      ElevatedButton(
+                        onPressed: () => nextTurn('pass'),
+                        child: Text('Passer'),
+                      ),
+                      SizedBox(width: 10),
+                      ElevatedButton(
+                        onPressed: () => nextTurn('fail'),
+                        child: Text('Échouer'),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                  Text('Cartes restantes : $cartesRestantes'),
+                  Text('Points : $points'),
+                ],
+              )
+            : Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(message.isEmpty
+                      ? 'Bienvenue à ${widget.categoryName} !'
+                      : message),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: startGame,
+                    child: Text('Lancer'),
+                  ),
+                ],
+              ),
+      ),
     );
   }
 }
