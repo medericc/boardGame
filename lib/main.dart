@@ -35,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
     ]),
     JustOneCategoryScreen(categoryName: 'Géographie', mots: [
       "Paris", "Mont Everest", "Amazonie", "Sahara", "Nile",
-      "Alpes", "Antarctique", "Syndey", "Tokyo", "Grand Canyon",
+      "Alpes", "Antarctique", "Sydney", "Tokyo", "Grand Canyon",
       "Himalaya", "Niagara Falls", "New York"
     ]),
     JustOneCategoryScreen(categoryName: 'Global', mots: [
@@ -56,7 +56,7 @@ class _MainScreenState extends State<MainScreen> {
     });
   }
 
- @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -144,17 +144,18 @@ class JustOneCategoryScreen extends StatefulWidget {
 class _JustOneCategoryScreenState extends State<JustOneCategoryScreen> {
   int points = 0;
   int cartesRestantes = 13;
-  int indexMot = 0;
+  List<String> motsRestants = [];
   bool gameStarted = false;
 
-  late String currentMot;
+  String currentMot = '';
   String message = '';
 
   @override
   void initState() {
     super.initState();
-    widget.mots.shuffle(Random());
-    currentMot = widget.mots[indexMot];
+    motsRestants = List.from(widget.mots); // Crée une copie de la liste des mots
+    motsRestants.shuffle(Random());
+    currentMot = motsRestants.first;
   }
 
   void startGame() {
@@ -162,8 +163,9 @@ class _JustOneCategoryScreenState extends State<JustOneCategoryScreen> {
       gameStarted = true;
       cartesRestantes = 13;
       points = 0;
-      indexMot = 0;
-      currentMot = widget.mots[indexMot];
+      motsRestants = List.from(widget.mots);
+      motsRestants.shuffle(Random());
+      currentMot = motsRestants.removeAt(0);
     });
   }
 
@@ -171,22 +173,40 @@ class _JustOneCategoryScreenState extends State<JustOneCategoryScreen> {
     setState(() {
       if (result == 'success') {
         points += 1;
-        cartesRestantes -= 1;
-      } else if (result == 'fail') {
-        
-        cartesRestantes -= 2; 
-      } else if (result == 'pass') {
-        cartesRestantes -= 1;
       }
 
-      if (cartesRestantes > 0) {
-        indexMot += 1;
-        currentMot = widget.mots[indexMot % widget.mots.length];
+      cartesRestantes -= (result == 'fail') ? 2 : 1;
+
+      if (cartesRestantes > 0 && motsRestants.isNotEmpty) {
+        currentMot = motsRestants.removeAt(0);
       } else {
+        // Affiche le message de fin de jeu
         message = "Jeu terminé ! Score final : $points";
         gameStarted = false;
+        _showEndGameDialog();
       }
     });
+  }
+
+  void _showEndGameDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Jeu terminé"),
+          content: Text("Score final : $points"),
+          actions: [
+            TextButton(
+              child: Text("OK"),
+              onPressed: () {
+                Navigator.of(context).pop(); // Ferme le dialogue
+                startGame(); // Redémarre une nouvelle partie
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
