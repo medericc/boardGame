@@ -147,16 +147,35 @@ class _JustOneCategoryScreenState extends State<JustOneCategoryScreen> {
                       ),
                     ),
                     SizedBox(height: 20),
+                    // Disposition des boutons en forme de triangle
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          children: [
+                            ElevatedButton(
+                              onPressed: () => nextTurn('success'),
+                              style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                                textStyle: TextStyle(fontSize: 24),
+                              ),
+                              child: Text('Réussi'),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                          onPressed: () => nextTurn('success'),
+                          onPressed: () => nextTurn('fail'),
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                             textStyle: TextStyle(fontSize: 24),
                           ),
-                          child: Text('Réussi'),
+                          child: Text('Échouer'),
                         ),
                         SizedBox(width: 10),
                         ElevatedButton(
@@ -166,15 +185,6 @@ class _JustOneCategoryScreenState extends State<JustOneCategoryScreen> {
                             textStyle: TextStyle(fontSize: 24),
                           ),
                           child: Text('Passer'),
-                        ),
-                        SizedBox(width: 10),
-                        ElevatedButton(
-                          onPressed: () => nextTurn('fail'),
-                          style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                            textStyle: TextStyle(fontSize: 24),
-                          ),
-                          child: Text('Échouer'),
                         ),
                       ],
                     ),
@@ -196,7 +206,7 @@ class _JustOneCategoryScreenState extends State<JustOneCategoryScreen> {
                       onPressed: startGame,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromARGB(255, 82, 163, 230),
-                        foregroundColor: Colors.white, // Set the text color to white
+                        foregroundColor: Colors.white,
                         padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                         textStyle: TextStyle(fontSize: 24, inherit: true),
                       ),
