@@ -152,7 +152,9 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Juste Un'),
+        foregroundColor: Colors.white,
         centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 82, 163, 230),
       ),
       body: IndexedStack(
         index: _selectedIndex,
