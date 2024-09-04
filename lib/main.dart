@@ -28,26 +28,134 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _screens = [
     HomeScreen(),
-    JustOneCategoryScreen(categoryName: 'Célébrité', mots: [
-      "Brad Pitt", "Beyoncé", "Albert Einstein", "Marilyn Monroe", "Charlie Chaplin",
-      "Elvis Presley", "Lady Gaga", "Leonardo da Vinci", "Michael Jackson", "Tom Cruise",
-      "Oprah Winfrey", "Madonna", "Walt Disney"
-    ]),
-    JustOneCategoryScreen(categoryName: 'Géographie', mots: [
-      "Paris", "Mont Everest", "Amazonie", "Sahara", "Nile",
-      "Alpes", "Antarctique", "Sydney", "Tokyo", "Grand Canyon",
-      "Himalaya", "Niagara Falls", "New York"
-    ]),
+  JustOneCategoryScreen(categoryName: 'Célébrité', mots: [
+  "Brad", "Beyoncé", "Einstein", "Marilyn", "Chaplin",
+  "Elvis", "Gaga", "Leonardo", "Michael", "Tom",
+  "Oprah", "Madonna", "Disney", "Adele", "Rihanna",
+  "Shakira", "Drake", "Mick", "Prince", "Eminem",
+  "Cher", "Sting", "Zayn", "Usher", "Shakira",
+  "Whitney", "Pink", "Sia", "Nas", "Kanye",
+  "Jay-Z", "Bono", "JLo", "Cardi", "Pitbull",
+  "Zendaya", "Scarlett", "Bieber", "Selena", "Dua",
+  "Lizzo", "TheRock", "Hulk", "Spock", "Bond",
+  "Mickey", "Thor", "Quincy", "Oprah", "Winfrey",
+  "Gandhi", "Tesla", "Picasso", "Freud", "Jobs",
+  "Gates", "Branson", "Zuckerberg", "Musk", "Buffett",
+  "Oprah", "Cher", "Snoop", "Bono", "Luther",
+  "Newton", "Plato", "Aristotle", "Buddha", "Confucius",
+  "Washington", "Lincoln", "Churchill", "Napoleon", "Caesar",
+  "Cleopatra", "Tutankhamun", "Shakespeare", "Mozart", "Beethoven",
+  "Chopin", "Dali", "VanGogh", "Rembrandt", "Warhol",
+  "Hitchcock", "Spielberg", "Kubrick", "Tarantino", "Nolan",
+  "Hemingway", "Rowling", "Tolkien", "Orwell", "Dickens"
+]),
+
+   JustOneCategoryScreen(categoryName: 'Géographie', mots: [
+  "Paris", "Everest", "Amazonie", "Sahara", "Nile",
+  "Alpes", "Antarctique", "Sydney", "Tokyo", "Canyon",
+  "Himalaya", "Niagara", "York", "London", "Berlin",
+  "Madrid", "Rome", "Cairo", "Moscow", "Beijing",
+  "Lagos", "Dubai", "Bangkok", "Istanbul", "Toronto",
+  "Shanghai", "Delhi", "Miami", "Chicago", "Lisbon",
+  "Vienna", "Munich", "Venice", "Florence", "Athens",
+  "Jerusalem", "Milan", "Barcelona", "Zurich", "Geneva",
+  "Dubai", "Seoul", "Osaka", "Jakarta", "Manila",
+  "Kabul", "Karachi", "Tehran", "Baghdad", "Riyadh",
+  "Casablanca", "Dakar", "Nairobi", "Lima", "Quito",
+  "Brasilia", "Buenos", "Santiago", "Bogota", "Caracas",
+  "Havana", "Montevideo", "Asuncion", "Paramaribo", "Georgetown",
+  "Bridgetown", "Kingston", "Managua", "SanJose", "Panama",
+  "Honduras", "Tegucigalpa", "Guatemala", "Belize", "Mexicali",
+  "Cancun", "Tijuana", "Puebla", "Hermosillo", "Monterrey",
+  "Phoenix", "Houston", "Dallas", "Atlanta", "Seattle",
+  "Portland", "LasVegas", "Denver", "SaltLake", "Anchorage",
+  "Honolulu", "Fairbanks", "Sydney", "Melbourne", "Brisbane",
+  "Perth", "Adelaide", "Darwin", "Auckland", "Wellington",
+  "Canberra", "Hobart", "Oslo", "Stockholm", "Helsinki",
+  "Copenhagen", "Reykjavik", "Tallinn", "Riga", "Vilnius",
+  "Warsaw", "Prague", "Budapest", "Bucharest", "Sofia",
+  "Belgrade", "Zagreb", "Sarajevo", "Ljubljana", "Skopje",
+  "Tirana", "Athens", "Valletta", "Nicosia", "Ankara",
+  "Istanbul", "Jerusalem", "Amman", "Beirut", "Damascus",
+  "Doha", "AbuDhabi", "Muscat", "Sanaa", "Maputo",
+  "Harare", "Kigali", "Lusaka", "Gaborone", "Windhoek",
+  "Bamako", "Ouagadougou", "Niamey", "N'Djamena", "Juba",
+  "Khartoum", "Addis", "Asmara", "Djibouti", "Mogadishu",
+  "Victoria", "Moroni", "Antananarivo", "PortLouis", "Pretoria",
+  "CapeTown", "Durban", "Kinshasa", "Brazzaville", "Libreville",
+  "Malabo", "Luanda", "Bangui", "Kinshasa", "Yaoundé",
+  "Douala", "Libreville", "PortoNovo", "Cotonou", "Lome",
+  "Accra", "Kumasi", "Abidjan", "Yamoussoukro", "Monrovia"
+]),
+
     JustOneCategoryScreen(categoryName: 'Global', mots: [
-      "Internet", "Téléphone", "Ordinateur", "Révolution industrielle", "Démocratie",
-      "Fusée", "Avion", "Espace", "Intelligence Artificielle", "Bitcoin",
-      "Énergie solaire", "Vaccin", "Satellite"
-    ]),
-    JustOneCategoryScreen(categoryName: 'Sportif', mots: [
-      "Football", "Basketball", "Tennis", "Natation", "Ski",
-      "Marathon", "Cyclisme", "Gymnastique", "Golf", "Rugby",
-      "Cricket", "Boxe", "Formule 1"
-    ]),
+  "Internet", "Téléphone", "Ordinateur", "Révolution", "Démocratie",
+  "Fusée", "Avion", "Espace", "Intelligence", "Bitcoin",
+  "Énergie", "Vaccin", "Satellite", "Blockchain", "Climat",
+  "Cryptocurrency", "Pandémie", "Biotechnologie", "Cloud", "Nanotechnologie",
+  "Robotique", "Globalisation", "Virtualité", "Quantum", "Automatisation",
+  "Cyborg", "Data", "Economie", "Sécurité", "Antivirus",
+  "Biodiversité", "Migration", "Urbanisation", "Agriculture", "Transhumanisme",
+  "Innovation", "Cryptographie", "Biomédecine", "Conservation", "Durabilité",
+  "Veganisme", "Réseaux", "Smartphone", "Streaming", "Photovoltaïque",
+  "Neutralité", "Progrès", "Épidémie", "Technologie", "Désinformation",
+  "Urbanisme", "Hydrogène", "Algorithme", "Socialisme", "Capacité",
+  "Digitalisation", "Influenceur", "Média", "Startup", "Bourse",
+  "Télétravail", "Régulation", "Éthique", "Éducation", "Informatique",
+  "Réchauffement", "Biodégradable", "Quotient", "Pollution", "Smart",
+  "Tourisme", "Logistique", "Développement", "Privatisation", "Patrimoine",
+  "Conflit", "Criminalité", "Piratage", "Hacktivisme", "Libéralisme",
+  "Humanitaire", "Identité", "Marketing", "Consommation", "Santé",
+  "Compétitivité", "Diversité", "Écologie", "Cryptomonnaie", "Viralité",
+  "Ressource", "Collectif", "Intégration", "Plastique", "Carbone",
+  "Résilience", "Sécheresse", "Incubateur", "Intelligence", "Assurance",
+  "Patriotisme", "Souveraineté", "Investissement", "Subvention", "Convergence",
+  "Technocratie", "Numérique", "Syndicat", "Gentrification", "Innovation",
+  "Justice", "Liberté", "Cryptage", "Mortalité", "Natalité",
+  "Censure", "Refugies", "Démographie", "Résistance", "Indépendance",
+  "Culture", "Technologie", "Humanisme", "Environnement", "Droit",
+  "Diplomatie", "Finance", "Stratégie", "Productivité", "Protection",
+  "Propriété", "Réparation", "Civilisation", "Renaissance", "Média",
+  "Communication", "Connectivité", "Espionnage", "Privatisation", "Innovation",
+  "Revenu", "Mobilité", "Matériaux", "Énergie", "Créativité",
+  "Diplomatie", "Trafic", "Guerre", "Pétrole", "Solidarité"
+]),
+
+   JustOneCategoryScreen(categoryName: 'Sportif', mots: [
+  "Football", "Basketball", "Tennis", "Natation", "Ski",
+  "Marathon", "Cyclisme", "Gymnastique", "Golf", "Rugby",
+  "Cricket", "Boxe", "Formule", "Surf", "Escrime",
+  "Judo", "Karate", "Athlétisme", "Handball", "Volley",
+  "Baseball", "Hockey", "Skateboard", "Snowboard", "Escalade",
+  "Lutte", "Taekwondo", "Aviron", "Equitation", "Polo",
+  "Triathlon", "Pentathlon", "Biathlon", "Squash", "Badminton",
+  "Curling", "Snooker", "Crossfit", "Zumba", "Yoga",
+  "Pilates", "Spinning", "Rowing", "Canoe", "Kayak",
+  "Rafting", "Plongée", "Voile", "BMX", "Parkour",
+  "Kickboxing", "Muaythai", "Sumo", "Sambo", "Fencing",
+  "Archery", "Darts", "Bowling", "Pétanque", "Boccia",
+  "Bobsleigh", "Luge", "Skeleton", "Toboggan", "Roller",
+  "Freestyle", "Sprint", "Saut", "Lancer", "Discus",
+  "Javelot", "Marche", "Slalom", "Relais", "Relay",
+  "Sprint", "Tackle", "Dribble", "Volley", "Smash",
+  "Service", "Pass", "Dunk", "Alley-oop", "Spike",
+  "Set", "Ace", "Fault", "Rebound", "Save",
+  "Goal", "Header", "Penalty", "Offside", "Scrum",
+  "Lineout", "Maul", "Ruck", "Kickoff", "Touchdown",
+  "Fieldgoal", "Punt", "Blitz", "Sack", "Interception",
+  "Homerun", "Steal", "Strikeout", "Doubleplay", "Tripleplay",
+  "Pinch", "Bunt", "Grounder", "Flyball", "LineDrive",
+  "Paddle", "Serve", "Dive", "Butterfly", "Freestyle",
+  "Backstroke", "Breaststroke", "Medley", "Draft", "Pole",
+  "Jump", "Vault", "Pommel", "Rings", "Floor",
+  "Parallel", "Horizontal", "Rope", "Beam", "Pommelhorse",
+  "Horse", "Trap", "Skeet", "Pistol", "Rifle",
+  "Biathlon", "Nordic", "Downhill", "Slalom", "Mogul",
+  "Halfpipe", "Bigair", "SuperG", "Boardercross", "Cross",
+  "Hurdles", "Relay", "Heptathlon", "Decathlon", "Throw",
+  "Shotput", "Javelin", "Discus", "Hammer", "Polevault"
+]),
+
   ];
 
   void _onItemTapped(int index) {
@@ -61,6 +169,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Juste Un'),
+         centerTitle: true,
       ),
       body: IndexedStack(
         index: _selectedIndex,
@@ -100,33 +209,42 @@ class _MainScreenState extends State<MainScreen> {
 }
 
 class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Bienvenue à Juste Un!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+@override
+Widget build(BuildContext context) {
+  return Center(
+    child: Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center, // Centre horizontalement
+        children: [
+          Text(
+            'Jeu d\'équipe !',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
             ),
-            SizedBox(height: 20),
-            Text(
-              'Règles du jeu :\n'
-              '1. Un joueur doit deviner un mot sans le voir.\n'
-              '2. Les autres joueurs écrivent un indice chacun, mais ils ne doivent pas être identiques.\n'
-              '3. Si le devineur trouve le mot, l\'équipe gagne un point. Sinon, elle perd un point.\n'
-              '4. Utilisez les différentes catégories pour des thèmes variés!',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16),
+          ),
+          SizedBox(height: 20),
+          Text(
+            'Règles du jeu :\n\n'
+            '1. Un joueur doit deviner un mot sans le voir.\n'
+            '2. Les autres joueurs écrivent un indice chacun (sur un bout de papier par exemple).\n'
+            '3. Ils se montrent ensuite leur mot-indice. Si des indices sont identiques, l\'indice sera éliminé et le devineur ne le verra pas.\n'
+            '4. Si le devineur trouve le mot, l\'équipe gagne un point. S\'il passe, l\'équipe perd une carte. S\'il se trompe, l\'équipe perd deux cartes.\n'
+            '5. L\'objectif est de conserver le maximum de cartes, jusqu\'à un maximum de 13.\n'
+            '6. Utilisez les différentes catégories pour des thèmes variés !',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 16,
+              height: 1.5, // Ajoute de l'espace entre les lignes
             ),
-          ],
-        ),
+          ),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
 }
 
 class JustOneCategoryScreen extends StatefulWidget {
@@ -277,7 +395,7 @@ class _JustOneCategoryScreenState extends State<JustOneCategoryScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(message.isEmpty
-                      ? 'Bienvenue à ${widget.categoryName} !'
+                      ? '${widget.categoryName} !'
                       : message),
                   SizedBox(height: 20),
                   ElevatedButton(
