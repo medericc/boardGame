@@ -99,7 +99,6 @@ class _MainScreenState extends State<MainScreen> {
   }
 }
 
-// Écran d'accueil avec les règles du jeu
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -130,7 +129,6 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-// Écran de catégorie générique avec le jeu Juste Un
 class JustOneCategoryScreen extends StatefulWidget {
   final String categoryName;
   final List<String> mots;
@@ -176,6 +174,17 @@ class _JustOneCategoryScreenState extends State<JustOneCategoryScreen> {
     });
   }
 
+  void resetGame() {
+    stopGame();  // Arrête la partie en cours
+    setState(() {
+      message = '';
+      gameStarted = false; // Revenir à l'état initial
+      motsRestants = List.from(widget.mots); // Réinitialiser les mots
+      motsRestants.shuffle(Random());
+      currentMot = motsRestants.first;
+    });
+  }
+
   void nextTurn(String result) {
     setState(() {
       if (result == 'success') {
@@ -187,7 +196,6 @@ class _JustOneCategoryScreenState extends State<JustOneCategoryScreen> {
       if (cartesRestantes > 0 && motsRestants.isNotEmpty) {
         currentMot = motsRestants.removeAt(0);
       } else {
-        // Affiche le message de fin de jeu
         message = "Jeu terminé ! Score final : $points";
         gameStarted = false;
         _showEndGameDialog();
@@ -234,6 +242,11 @@ class _JustOneCategoryScreenState extends State<JustOneCategoryScreen> {
             ? Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  ElevatedButton(
+                    onPressed: resetGame,
+                    child: Text('RESET'),
+                  ),
+                  SizedBox(height: 20),
                   Text('Mot à deviner : $currentMot'),
                   SizedBox(height: 20),
                   Row(
