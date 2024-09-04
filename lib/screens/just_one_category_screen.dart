@@ -110,51 +110,101 @@ class _JustOneCategoryScreenState extends State<JustOneCategoryScreen> {
         ],
       ),
       body: Center(
-        child: gameStarted
-            ? Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: resetGame,
-                    child: Text('RESET'),
-                  ),
-                  SizedBox(height: 20),
-                  Text('Mot à deviner : $currentMot'),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () => nextTurn('success'),
-                        child: Text('Réussi'),
+        child: SingleChildScrollView(
+          child: gameStarted
+              ? Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: resetGame,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 82, 163, 230),
+                        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                        textStyle: TextStyle(fontSize: 24, inherit: true),
                       ),
-                      SizedBox(width: 10),
-                      ElevatedButton(
-                        onPressed: () => nextTurn('pass'),
-                        child: Text('Passer'),
+                      child: Text('RESET'),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      margin: EdgeInsets.symmetric(horizontal: 40),
+                      decoration: BoxDecoration(
+                        color: Colors.blue[50],
+                        borderRadius: BorderRadius.circular(15),
+                        border: Border.all(
+                          color: Colors.blue,
+                          width: 2,
+                        ),
                       ),
-                      SizedBox(width: 10),
-                      ElevatedButton(
-                        onPressed: () => nextTurn('fail'),
-                        child: Text('Échouer'),
+                      child: Center(
+                        child: Text(
+                          currentMot,
+                          style: TextStyle(
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Text('Cartes restantes : $cartesRestantes'),
-                  Text('Points : $points'),
-                ],
-              )
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-               
-                  ElevatedButton(
-                    onPressed: startGame,
-                    child: Text('Lancer'),
-                  ),
-                ],
-              ),
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () => nextTurn('success'),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                            textStyle: TextStyle(fontSize: 24),
+                          ),
+                          child: Text('Réussi'),
+                        ),
+                        SizedBox(width: 10),
+                        ElevatedButton(
+                          onPressed: () => nextTurn('pass'),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                            textStyle: TextStyle(fontSize: 24),
+                          ),
+                          child: Text('Passer'),
+                        ),
+                        SizedBox(width: 10),
+                        ElevatedButton(
+                          onPressed: () => nextTurn('fail'),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                            textStyle: TextStyle(fontSize: 24),
+                          ),
+                          child: Text('Échouer'),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'Cartes restantes : $cartesRestantes',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    Text(
+                      'Points : $points',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ],
+                )
+              : Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: startGame,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 82, 163, 230),
+                        foregroundColor: Colors.white, // Set the text color to white
+                        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                        textStyle: TextStyle(fontSize: 24, inherit: true),
+                      ),
+                      child: Text('Lancer'),
+                    ),
+                  ],
+                ),
+        ),
       ),
     );
   }
