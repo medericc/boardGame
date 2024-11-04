@@ -12,28 +12,31 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _screens = [
-    HomeScreen(),
-  JustOneCategoryScreen(categoryName: 'Célébrité', mots: [
-  "Brad", "Beyoncé", "Einstein", "Marilyn", "Chaplin",
-  "Elvis", "Gaga", "Leonardo", "Michael", "Tom",
-  "Oprah", "Madonna", "Disney", "Adele", "Rihanna",
-  "Shakira", "Drake", "Mick", "Prince", "Eminem",
-  "Cher", "Sting", "Zayn", "Usher", "Shakira",
-  "Whitney", "Pink", "Sia", "Nas", "Kanye",
-  "Jay-Z", "Bono", "JLo", "Cardi", "Pitbull",
-  "Zendaya", "Scarlett", "Bieber", "Selena", "Dua",
-  "Lizzo", "TheRock", "Hulk", "Spock", "Bond",
-  "Mickey", "Thor", "Quincy", "Oprah", "Winfrey",
-  "Gandhi", "Tesla", "Picasso", "Freud", "Jobs",
-  "Gates", "Branson", "Zuckerberg", "Musk", "Buffett",
-  "Oprah", "Cher", "Snoop", "Bono", "Luther",
-  "Newton", "Plato", "Aristotle", "Buddha", "Confucius",
-  "Washington", "Lincoln", "Churchill", "Napoleon", "Caesar",
-  "Cleopatra", "Tutankhamun", "Shakespeare", "Mozart", "Beethoven",
-  "Chopin", "Dali", "VanGogh", "Rembrandt", "Warhol",
-  "Hitchcock", "Spielberg", "Kubrick", "Tarantino", "Nolan",
-  "Hemingway", "Rowling", "Tolkien", "Orwell", "Dickens"
-]),
+HomeScreen(), 
+JustOneCategoryScreen(
+  categoryName: 'Célébrité', 
+  mots: [
+    "Brad", "Beyoncé", "Einstein", "Marilyn", "Chaplin",
+    "Elvis", "Gaga", "Leonardo", "Michael", "Tom",
+    "Madonna", "Disney", "Adele", "Rihanna", 
+    "Shakira", "Drake", "Mick", "Prince", "Eminem",
+    "Cher", "Sting", "Zayn", "Usher", "Shakira",
+    "Whitney", "Pink", "Sia", "Kanye", 
+    "Bono", "JLo", "Cardi", "Pitbull",
+    "Zendaya", "Scarlett", "Bieber", "Selena",  
+    "Hulk", "Spock", "Bond",
+    "Mickey", "Thor", "Quincy", 
+    "Gandhi", "Tesla", "Picasso", "Freud", "Jobs",
+    "Gates", "Branson", "Zuckerberg", "Musk", "Snoop", "Bono", "Luther",
+    "Newton", "Platon", "Aristote", "Bouddha", 
+    "Georges", "Abraham", "Churchill", "Napoléon", "César",
+    "Cléopâtre", "Toutânkhamon", "Shakespeare", "Mozart", "Beethoven",
+    "Chopin", "Dali", "Van", "Rembrandt", "Warhol",
+    "Hitchcock", "Spielberg", "Tarantino", "Nolan", 
+    "Rowling","Bowie", "Harrison", "Jagger", "Alicia", "Kurt", "Kylie", "Gwen", "Jared", "Rita", "Kesha", "Megan", "Halsey", "Kendrick", "Ariana", "Tina", "Janet", "Chris", "Travis", "Nelly", "Pharrell", "Ed", "Shawn", "Miley", "Khaled", "Lil", "Sabrina", "Nicki", "Charlie", "Harry", "Taylor", "Selena", "Justin", "Katy", "Blake", "Marshmello", "Paul", "Lenny", "Tracy", "Hugh", "Jim", "Jack", "Nina", "Shania", "Dolly", "Loretta", "Gareth", "Tim", "Alan", "Dwayne", "Ryan", "Matt", "Ben", "Will", "Jude", "Jeremy", "Jeff", "Oscar", "Mark", "Samuel", "Eva", "Penélope", "Cate", "Lazare", "Emma", "Margot", "Rachel", "Saoirse", "Judas", "Zoe", "Jessica", "Anne", "Meryl", "Nicole", "Julianne", "Gal", "Saül", "Samson", "Rébecca", "Jean-Baptiste", "Daniel ", "Kristen", "Élisée", "Jérémie", "Salomon", "David", "Joseph", "Isaac", "Noé", "Adam", "Zacharie", "Pilate", "Simon", "Marie", "Veronique", "Jonas", "Jacob", "Moïse", "Elie", "Halle", "Tiffany", "Issa", "Tracee"
+  ]
+)
+,
 
    JustOneCategoryScreen(categoryName: 'Géographie', mots: [
   "Paris", "Everest", "Amazonie", "Sahara", "Nile",
@@ -70,7 +73,12 @@ class _MainScreenState extends State<MainScreen> {
   "CapeTown", "Durban", "Kinshasa", "Brazzaville", "Libreville",
   "Malabo", "Luanda", "Bangui", "Kinshasa", "Yaoundé",
   "Douala", "Libreville", "PortoNovo", "Cotonou", "Lome",
-  "Accra", "Kumasi", "Abidjan", "Yamoussoukro", "Monrovia"
+  "Accra", "Kumasi", "Abidjan", "Yamoussoukro", "Monrovia","Montagne", "Désert", "Forêt", "Océan", "Volcan", "Île", "Rivière", "Lac", "Fjord", "Plage",
+"Canyon", "Colline", "Vallée", "Delta", "Toundra", "Savane", "Steppe", "Glacier", "Archipel",
+"Atoll", "Baie", "Côte", "Cap", "Marais", "Lagune", "Péninsule", "Continent", "Récif",
+"Plateau", "Dune", "Prairie", "Région", "Estuaire", "Tsunami", "Cyclone", "Tornade", "Tremblement",
+"Équateur", "Tropique", "Méridien", "Hemisphere", "Oasis", "Volcan", "Crête", "Isthme",
+"Plissement", "Gorge", "Faille", "Sierra"
 ]),
 
     JustOneCategoryScreen(categoryName: 'Global', mots: [
@@ -107,38 +115,73 @@ class _MainScreenState extends State<MainScreen> {
 ]),
 
    JustOneCategoryScreen(categoryName: 'Sport', mots: [
-  "Football", "Basketball", "Tennis", "Natation", "Ski",
-  "Marathon", "Cyclisme", "Gymnastique", "Golf", "Rugby",
-  "Cricket", "Boxe", "Formule", "Surf", "Escrime",
-  "Judo", "Karate", "Athlétisme", "Handball", "Volley",
-  "Baseball", "Hockey", "Skateboard", "Snowboard", "Escalade",
-  "Lutte", "Taekwondo", "Aviron", "Equitation", "Polo",
-  "Triathlon", "Pentathlon", "Biathlon", "Squash", "Badminton",
-  "Curling", "Snooker", "Crossfit", "Zumba", "Yoga",
-  "Pilates", "Spinning", "Rowing", "Canoe", "Kayak",
-  "Rafting", "Plongée", "Voile", "BMX", "Parkour",
-  "Kickboxing", "Muaythai", "Sumo", "Sambo", "Fencing",
-  "Archery", "Darts", "Bowling", "Pétanque", "Boccia",
-  "Bobsleigh", "Luge", "Skeleton", "Toboggan", "Roller",
-  "Freestyle", "Sprint", "Saut", "Lancer", "Discus",
-  "Javelot", "Marche", "Slalom", "Relais", "Relay",
-  "Sprint", "Tackle", "Dribble", "Volley", "Smash",
-  "Service", "Pass", "Dunk", "Alley-oop", "Spike",
-  "Set", "Ace", "Fault", "Rebound", "Save",
-  "Goal", "Header", "Penalty", "Offside", "Scrum",
-  "Lineout", "Maul", "Ruck", "Kickoff", "Touchdown",
-  "Fieldgoal", "Punt", "Blitz", "Sack", "Interception",
-  "Homerun", "Steal", "Strikeout", "Doubleplay", "Tripleplay",
-  "Pinch", "Bunt", "Grounder", "Flyball", "LineDrive",
-  "Paddle", "Serve", "Dive", "Butterfly", "Freestyle",
-  "Backstroke", "Breaststroke", "Medley", "Draft", "Pole",
-  "Jump", "Vault", "Pommel", "Rings", "Floor",
-  "Parallel", "Horizontal", "Rope", "Beam", "Pommelhorse",
-  "Horse", "Trap", "Skeet", "Pistol", "Rifle",
-  "Biathlon", "Nordic", "Downhill", "Slalom", "Mogul",
-  "Halfpipe", "Bigair", "SuperG", "Boardercross", "Cross",
-  "Hurdles", "Relay", "Heptathlon", "Decathlon", "Throw",
-  "Shotput", "Javelin", "Discus", "Hammer", "Polevault"
+ "Djokovic", "Nadal", "Federer", "Alcaraz", "Medvedev",
+  "Tsitsipas", "Zverev", "Rublev", "Murray", "Rune",
+  "Berrettini", "Thiem", "Auger", "Kyrgios", "Sinner",
+  "Open", "Roland", "Wimbledon", "US", "Davis",
+  "Chelem", "Ace", "Service", "Revers", "Coup",
+  "Tie-break", "Lob", "Passing", "Smash", "Break",
+  "Match", "Faute", "Slice", "Let", "Avantage",
+  "Retour", "Échange", "Set", "Raquette", "Surface",
+  "Terre", "Gazon", "Éraflure", "Filet", "Balle",
+
+  // Basket féminin (LFB, LF2)
+  "Bourges", "ASVEL", "Villeneuve", "Landes", "Toulouse",
+  "Mondeville", "Angers", "Nantes", "Roche", "Charleville",
+  "LF2", "Playoffs", "Finale", "Trois", "Double",
+  "Dunk", "Rebond",  "Tir", "Foul",
+
+  // Football masculin (2018)
+  "Mbappé", "Griezmann", "Pogba", "Kanté", "Varane",
+  "Lloris", "Giroud", "Deschamps", "Modric", "Mandzukic",
+  "Kane", "Hazard", "Courtois", "Ronaldo", "Messi",
+  "France", "Croatie", "Belgique", "Angleterre", "Coupe",
+  "Finale", "But", "Pénalty", "Hors-jeu", "Carton",
+  "Coup-franc", "Corner", "Tacle", "Contre-attaque", "Arbitre"
+
+    // Rugby
+  "Essai", "Mêlée", "Transformation", "Plaquage", "Drop",
+  "Touche", "Troisième", "Ligne", "Carton", "Prolongation",
+  
+  // Football américain (FootUS)
+  "Touchdown", "Quarterback", "Fumble", "Fieldgoal", "Interception",
+  "Tackle", "Endzone", "Linebacker", "Superbowl", "Snap",
+
+  // Basket masculin
+  "NBA", "Finales", "LeBron", "Curry", "Durant",
+  "All-Star", "Buzzer","Dunk",
+  
+  // Baseball
+  "HomeRun", "Strike", "Pitcher", "Catcher", "Base",
+  "Outfield", "Inning", "Hit", "Run",
+
+  // Volley-ball
+  "Service", "Smash", "Block", "Ace", "Récupération",
+  "Contre", "Passeur", "Rotation", "Point", "Set",
+
+  // Handball
+  "Buteur", "Gardien", "Jet", "Pénalty", 
+  "Ailier", "Pivot", "Cadré",
+
+  // Judo
+  "Ippon", "Tatami", "Ceinture",
+  "Prise", "Projection", "Ne-waza", "Shido", "Dojo",
+
+  // Cyclisme (Vélo)
+  "Tour", "Sprint", "Contre-la-montre", "Peloton", "Échappée",
+  "Maillot", "Col", "Grimpeur", "Vélo", "Bidon",
+
+  // MMA
+  "Octogone", "Soumission", "Takedown", 
+   "Grappling", "Jab", "Coup", "Poing",
+
+  // Boxe
+  "Ring", "KO", "Uppercut", "Direct", "Crochet",
+  "Poids", "Gant", "Rond", "Garde",
+
+  // Athlétisme (Athlé)
+  "Sprint", "Relais", "Marathon", "Lancer", "Hauteur",
+  "Longueur", "Disque", "Javelot", "Perche", "Départ"
 ]), ];
 
   void _onItemTapped(int index) {

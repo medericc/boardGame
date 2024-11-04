@@ -24,7 +24,7 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.example.just_one_game"
-    compileSdk flutter.compileSdkVersion
+     compileSdk 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -40,14 +40,12 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
-    defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+      defaultConfig {
         applicationId "com.medericc.justonegame"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
-        versionCode flutterVersionCode.toInteger()
+        targetSdkVersion 34 // Remplacer par le niveau d'API 34
+      versionCode 3 // Change 1 to 2 (or any higher number)
+
         versionName flutterVersionName
     }
   signingConfigs {
@@ -64,6 +62,8 @@ storePassword System.getenv('STORE_PASSWORD')
     }
      buildTypes {
         release {
+           
+
             signingConfig signingConfigs.release
             minifyEnabled true // Réduire la taille de l'APK
             shrinkResources true
